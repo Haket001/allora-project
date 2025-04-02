@@ -1,0 +1,37 @@
+.about-team {
+  margin-bottom: 130px;
+}
+.about-team h4 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 45px;
+}
+.about-team .image-wrap {
+  max-width: 100%;
+  margin-bottom: 50px;
+}
+.about-team .image-wrap img {
+  width: 100%;
+  aspect-ratio: 2/1;
+  object-fit: cover;
+  border-radius: 25px;
+}
+.about-team .text-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.about-team .text-wrap strong {
+  font-family: "Rounded Mplus 1c";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 70px;
+  color: #FF978F;
+  text-transform: none;
+}
+.about-team .text-wrap .left__text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

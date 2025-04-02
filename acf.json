@@ -1,0 +1,91 @@
+{
+	"key": "group_hero_section",
+	"title": "Hero Section",
+	"fields": [
+			{
+					"key": "field_video_field",
+					"label": "Video URL",
+					"name": "video_field",
+					"type": "url",
+					"instructions": "Enter the URL of the MP4 video.",
+					"required": 0
+			},
+			{
+					"key": "field_hero_tiitle",
+					"label": "Hero Title",
+					"name": "hero_tiitle",
+					"type": "text",
+					"instructions": "Enter the main title for the hero section.",
+					"required": 1
+			},
+			{
+					"key": "field_hero_tiitle_second",
+					"label": "Hero Subtitle",
+					"name": "hero_tiitle_second",
+					"type": "text",
+					"instructions": "Enter the subtitle for the hero section.",
+					"required": 0
+			},
+			{
+					"key": "field_hero_logo",
+					"label": "Hero Logo (SVG)",
+					"name": "hero_logo",
+					"type": "file",
+					"instructions": "Upload an SVG logo for the hero section.",
+					"required": 0,
+					"return_format": "url",
+					"mime_types": "svg"
+			},
+			{
+					"key": "field_social_links",
+					"label": "Social Links",
+					"name": "social_links",
+					"type": "repeater",
+					"instructions": "Add social media links with icons.",
+					"required": 0,
+					"collapsed": "field_social_url",
+					"min": 0,
+					"max": 5,
+					"layout": "table",
+					"button_label": "Add Social Link",
+					"sub_fields": [
+							{
+									"key": "field_social_url",
+									"label": "Social Media URL",
+									"name": "social_url",
+									"type": "url",
+									"instructions": "Enter the link to the social media profile.",
+									"required": 1
+							},
+							{
+									"key": "field_social_icon",
+									"label": "Social Media Icon (SVG)",
+									"name": "social_icon",
+									"type": "file",
+									"instructions": "Upload an SVG icon for the social media link.",
+									"required": 1,
+									"return_format": "url",
+									"mime_types": "svg"
+							}
+					]
+			}
+	],
+	"location": [
+			[
+					{
+							"param": "block",
+							"operator": "==",
+							"value": "acf/hero-section"
+					}
+			]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": 1,
+	"description": "Custom ACF fields for the Hero Section block.",
+	"show_in_rest": 1
+}

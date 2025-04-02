@@ -1,0 +1,45 @@
+.why-section h4 {
+  text-transform: uppercase;
+}
+
+.why-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 67px 0 145px 0;
+}
+
+.why-element {
+  width: 100%;
+  max-width: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.why-element p {
+  width: 400px;
+}
+
+.why-slug-wrap {
+  display: flex;
+  align-items: flex-end;
+}
+.why-slug-wrap strong {
+  color: #FFD767;
+  font-size: 128px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100px;
+  text-transform: uppercase;
+  margin-left: -11px;
+}
+.why-slug-wrap p {
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 24px;
+  font-size: 24px;
+}
+.why-slug-wrap p:empty {
+  display: none;
+}

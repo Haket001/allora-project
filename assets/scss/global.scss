@@ -1,0 +1,201 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    transition: background 0.3s ease, color 0.3s ease, opacity 0.3s ease, max-height 0.3s ease, min-height 0.3s ease, transform 0.3s ease, fill 0.3s ease;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Rounded Mplus 1c";
+    font-weight: 400;
+    color: black;
+    min-height: 100vh;
+}
+
+input:focus-visible {
+    border: none !important;
+    outline: none !important;
+}
+
+a,
+a:visited,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+select:focus-visible {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+h1 {
+    font-family: "Rounded Mplus 1c";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 80px;
+    text-transform: uppercase;
+}
+
+h4 {
+    color: #202020;
+    font-family: "Rounded Mplus 1c";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+h5 {
+    font-family: "Rounded Mplus 1c";
+    color: white;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 44px;
+}
+
+h6 {
+    font-family: "Rounded Mplus 1c";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+strong {
+    font-weight: 700;
+    font-size: 36px;
+    text-transform: uppercase;
+    padding: 0 !important;
+}
+
+.link-button {
+    border-radius: 25px;
+    color: white !important;
+    font-size: 20px;
+    font-weight: 700;
+    width: 250px;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-button.dark {
+    background: $dark-primary;
+}
+
+.link-button.light {
+    background: $light-primary;
+}
+
+.gradient-button {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+@property --gradient-pos {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 0%;
+}
+
+.gradient-button {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: linear-gradient(180deg, #FF978F 0%, #FFD767 46.5%);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        will-change: opacity;
+    }
+
+    &:hover {
+        color: #202020 !important;
+        background: transparent;
+
+        &::before {
+            opacity: 1;
+        }
+    }
+}
+
+
+.text-area p:nth-child(2){
+    padding-top: 0;
+}
+
+p:empty {
+    padding: 0 !important;
+    height: 0 !important;
+}
+
+.container {
+    max-width: 1720px;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+
+.container-fluid {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.line {
+    padding-top: 0.3px;
+    border: none;
+    background: #ABABAB;
+}
+
+.social-wrap {
+    display: flex;
+    gap: 20px;
+}
+
+.wp-block-group, .wp-block-image, .wp-block-image img {
+    height: 100% !important;
+}
+
+.wp-block-image img {
+    object-fit: cover;
+}
+
+@mixin media-query($max-width, $padding, $container-width) {
+    @media screen and (max-width: $max-width) {
+        .container {
+            max-width: $container-width;
+            padding-left: $padding;
+            padding-right: $padding;
+        }
+    }
+}
+
+@include media-query(1440px, 40px, 1360px);
+@include media-query(1200px, 20px, 100%);
+@include media-query(470px, 40px, 100%);

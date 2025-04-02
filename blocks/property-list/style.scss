@@ -1,0 +1,121 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/mixins' as *;
+
+.property-section h4 {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.property-section {
+	padding-bottom: 110px;
+}
+
+.sell-block {
+	display: flex;
+	justify-content: center;
+	align-items: center !important;
+	padding: 83px 0;
+	border-radius: 25px;
+	background: #F6F6F6;
+	margin: 100px 0;
+	gap: 30px;
+}
+
+.grid-container {
+	padding: 50px 0;
+}
+
+.property-buttons-wrap {
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+#filter-modal {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  
+    .modal-content {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 80px 67px;
+        border-radius: 4px;
+        max-width: 750px;
+        width: 100%;
+        overflow: auto;
+        display: flex;
+        border-radius: 50px;
+      }
+  
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+  
+      &:hover,
+      &:focus {
+        color: #000;
+      }
+    }
+    .property-filter-form {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .custom-select {
+        width: calc(50% - 12px);
+        max-width: none;
+    }
+    .property-filter {
+        padding: 0;
+        background: white;
+    }
+    .apply-filter {
+        max-width: 100%;
+        height: 48px;
+        justify-content: center;
+    }
+    .custom-select-trigger {
+        height: 48px;
+    }
+    .red-circle {
+        width: 44px;
+        height: 44px;
+    }
+    .custom-select-trigger::after {
+        margin-left: unset;
+        margin-right: -8px;
+    }
+    .budget {
+        left: 100%;
+        top: -25%;
+    }
+    .heading {
+        text-align: center;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+        margin-bottom: 27px;
+    }
+  }

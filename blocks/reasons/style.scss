@@ -1,0 +1,53 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/mixins' as *;
+
+.reasons-section h4 {
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.rounded-square {
+	width: 120px;
+	height: 120px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 35px;
+	background: $light-primary;
+}
+
+.reason {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 100%;
+	max-width: calc(25% - 23px);
+	align-items: flex-start;
+	h5 {
+		color: black;
+		font-weight: 500;
+	}
+	p {
+		text-align: start;
+	}
+	p:empty {
+		display: none;
+	}
+}
+
+.reasons-wrap {
+	display: flex;
+	justify-content: space-between;
+	gap: 27px;
+	padding: 50px 0 120px 0;
+	flex-wrap: wrap;
+}
+
+.rounded-square:hover {
+	background-color: $dark-primary;
+	cursor: pointer;
+}
+
+.rounded-square:hover svg * {
+	fill: $light-primary;
+}

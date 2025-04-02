@@ -1,0 +1,80 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/mixins' as *;
+
+.accordion-block-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 47px;
+	gap: 20px;
+}
+
+.accordion-section {
+	padding-bottom: 115px;
+}
+
+.accordion-block-wrap h4 {
+	width: 347px;
+	text-transform: uppercase;
+	line-height: 54px;
+}
+
+.accordion-wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 100%;
+	max-width: 1056px;
+
+}
+
+.tab {
+	position: relative;
+	width: 100%;
+}
+
+.tab input {
+	position: absolute;
+	opacity: 0;
+	z-index: -1;
+}
+
+.tab__content {
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.35s;
+}
+
+.tab input:checked~.tab__content {
+	max-height: 20rem;
+}
+
+.tab__label,
+.tab__close {
+	display: flex;
+	background: $yellow;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.tab__label {
+	justify-content: space-between;
+	padding: 23px 30px;
+}
+
+.tab__label::after {
+	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='9' viewBox='0 0 13 9' fill='none'%3E%3Cpath d='M7.01975 7.75038C6.60652 8.1923 5.89857 8.1689 5.51542 7.70066L0.902906 2.06378C0.358816 1.39886 0.851178 0.40266 1.70987 0.431045L11.2971 0.747965C12.1558 0.77635 12.5813 1.80289 11.9945 2.43043L7.01975 7.75038Z' fill='%23202020'/%3E%3C/svg%3E");
+	display: inline-block;
+	width: 13px;
+	height: 23px;
+	transition: all 0.35s;
+}
+
+.tab input:checked+.tab__label::after {
+	transform: rotate(180deg);
+}
+
+.tab__content p {
+	margin: 0;
+	padding: 20px 30px;
+}

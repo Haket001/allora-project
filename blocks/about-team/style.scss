@@ -1,0 +1,40 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/mixins' as *;
+
+.about-team {
+  margin-bottom: 130px;
+  h4 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 45px;
+  }
+  .image-wrap {
+    max-width: 100%;
+    margin-bottom: 50px;
+    img {
+      width: 100%;
+      aspect-ratio: 2/1;
+      object-fit: cover;
+      border-radius: 25px;
+    }
+  }
+  .text-wrap {
+    display: flex;
+    justify-content: space-between;
+    strong {
+      font-family: "Rounded Mplus 1c";
+      font-size: 64px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 70px;
+      color: $light-primary;
+      text-transform: none;
+    }
+    .left__text {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+}

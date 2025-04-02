@@ -1,0 +1,16 @@
+{
+	"name": "acf/about-team",
+	"title": "AboutTeam",
+	"description": "AboutTeam",
+	"category": "layout",
+	"icon": "cover-image",
+	"keywords": ["AboutTeam", "banner", "acf"],
+	"supports": {
+			"align": true,
+			"anchor": true
+	},
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "render_acf_block"
+	}
+}

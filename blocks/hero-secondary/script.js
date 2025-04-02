@@ -1,0 +1,1 @@
+// JS for HeroSecondary block

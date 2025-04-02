@@ -1,0 +1,19 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.breadcrumbs {
+	padding: 30px 0;
+}
+
+.breadcrumbs {
+	color: $light-gray;
+	span, a, * {
+		font-weight: 500;
+		line-height: 36px;
+		letter-spacing: -0.32px;
+		color: $light-gray;
+	}
+	a:hover {
+		color: $dark-primary;
+	}
+}

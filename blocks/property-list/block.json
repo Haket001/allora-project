@@ -1,0 +1,19 @@
+{
+	"name": "acf/property-list",
+	"title": "Property Section",
+	"description": "Property Section",
+	"category": "layout",
+	"icon": "cover-image",
+	"keywords": ["property", "acf"],
+	"enqueueStyle": "file:./style.css",
+	"enqueueEditorStyle": "file:./editor.css",
+	"enqueueScript": "file:./script.js",
+	"supports": {
+			"align": true,
+			"anchor": true
+	},
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "render_acf_block"
+	  }
+}

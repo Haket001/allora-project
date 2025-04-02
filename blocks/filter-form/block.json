@@ -1,0 +1,22 @@
+{
+  "name": "acf/filter-form",
+  "title": "FilterForm",
+  "description": "FilterForm",
+  "category": "layout",
+  "icon": "cover-image",
+  "keywords": [
+    "FilterForm",
+    "banner",
+    "acf"
+  ],
+  "enqueueStyle": "file:./style.css",
+  "enqueueEditorStyle": "file:./editor.css",
+  "supports": {
+    "align": true,
+    "anchor": true
+  },
+  "acf": {
+    "mode": "edit",
+    "renderCallback": "render_acf_block"
+  }
+}
