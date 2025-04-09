@@ -1,0 +1,22 @@
+{
+  "name": "acf/cards-map",
+  "title": "CardsMap",
+  "description": "CardsMap",
+  "category": "layout",
+  "icon": "cover-image",
+  "keywords": [
+    "CardsMap",
+    "banner",
+    "acf"
+  ],
+  "enqueueStyle": "file:./style.css",
+  "enqueueEditorStyle": "file:./editor.css",
+  "supports": {
+    "align": true,
+    "anchor": true
+  },
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  }
+}

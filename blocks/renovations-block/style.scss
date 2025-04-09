@@ -1,0 +1,98 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/mixins' as *;
+
+.renovations-form__wrap {
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 25px;
+    background: $gray;
+    margin-top: 100px;
+    margin-bottom: 150px;
+    .renovations-form__image {
+        width: 100%;
+        height: auto;
+        max-width: 250px;
+        aspect-ratio: 1 / 1;
+        img {
+            width: 100%;
+            border-radius: 150px;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            object-position: top;
+        }
+    }
+    .renovations-form__wrap-text {
+        display: flex;
+        gap: 50px;
+    }
+    .renovations-form__text {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        max-width: 500px;
+        h3 {
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 44px;
+        }
+        strong {
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 28px;
+        }
+    }
+}
+
+.renovations-form__form {
+    width: 100%;
+    max-width: 600px;
+    * {
+        width: 100%;
+    }
+    input {
+        width: 100%;
+        border-radius: 50px;
+        border: 1px solid #D9D9D9;
+        background: #FFF;
+        height: 46px;
+        padding: 10px 15px;
+        margin-bottom: 9px;
+    }
+    textarea {
+        width: 100%;
+        border-radius: 15px;
+        border: 1px solid #D9D9D9;
+        background: #FFF;
+        height: 83px;
+        padding: 10px 15px;
+        margin-bottom: 12px;
+        resize: none;
+    }
+    textarea::placeholder {
+        font-family: "Rounded Mplus 1c";
+        font-weight: 500;
+
+    }
+    .wpcf7-spinner {
+        display: none;
+    }
+    .wpcf7-submit {
+        margin-bottom: 0;
+        background: $dark-primary;
+        font-size: 14px;
+        font-weight: 700;
+        color: white;
+        border: none;
+    }
+    .wpcf7-submit:hover {
+        background: $yellow;
+        color: $dark-primary;
+        cursor: pointer;
+    }
+}

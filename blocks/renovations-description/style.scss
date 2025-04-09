@@ -1,0 +1,23 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/mixins' as *;
+
+.description {
+    h3 {
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+    }
+    p {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 36px; 
+    }
+}
+
+.renovations-form__wrap {
+    margin-top: 50px !important;
+}

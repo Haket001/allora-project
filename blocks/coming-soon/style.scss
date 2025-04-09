@@ -1,0 +1,11 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/mixins' as *;
+
+.coming-soon-section {
+    min-height: calc(100dhv - 100px);
+    background: linear-gradient(180deg, rgba(255, 215, 103, 0.30) 0%, rgba(255, 151, 143, 0.30) 100%);
+}
+
+.coming-soon {
+    margin: auto;
+}

@@ -1,0 +1,22 @@
+{
+  "name": "acf/renovations-description",
+  "title": "RenovationsDescription",
+  "description": "RenovationsDescription",
+  "category": "layout",
+  "icon": "cover-image",
+  "keywords": [
+    "RenovationsDescription",
+    "banner",
+    "acf"
+  ],
+  "enqueueStyle": "file:./style.css",
+  "enqueueEditorStyle": "file:./editor.css",
+  "supports": {
+    "align": true,
+    "anchor": true
+  },
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  }
+}

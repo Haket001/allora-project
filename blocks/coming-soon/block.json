@@ -1,0 +1,22 @@
+{
+  "name": "acf/coming-soon",
+  "title": "ComingSoon",
+  "description": "ComingSoon",
+  "category": "layout",
+  "icon": "cover-image",
+  "keywords": [
+    "ComingSoon",
+    "banner",
+    "acf"
+  ],
+  "enqueueStyle": "file:./style.css",
+  "enqueueEditorStyle": "file:./editor.css",
+  "supports": {
+    "align": true,
+    "anchor": true
+  },
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  }
+}

@@ -1,0 +1,78 @@
+h1 {
+  width: 200px;
+  text-transform: uppercase;
+  line-height: 54px;
+  font-size: 36px;
+  margin-bottom: 36px;
+}
+
+.guides-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.guides-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 47px;
+  width: 100%;
+  margin-bottom: 100px;
+}
+.guides-container .post {
+  display: flex;
+  border-radius: 15px;
+  background: #F6F6F6;
+  overflow: hidden;
+  height: 380px;
+  gap: 40px;
+  width: 100%;
+  max-width: 1020px;
+}
+.guides-container .post img {
+  aspect-ratio: 1/1;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+.guides-container .post .img-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+.guides-container .post .img-link img {
+  aspect-ratio: 1/1;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+.guides-container .post .post-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding-right: 36px;
+}
+.guides-container .post .post-link {
+  color: #2A3E57;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 44px;
+  letter-spacing: 0.4px;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+.guides-container .post h2 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+}

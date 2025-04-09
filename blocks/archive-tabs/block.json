@@ -1,0 +1,22 @@
+{
+  "name": "acf/archive-tabs",
+  "title": "ArchiveTabs",
+  "description": "ArchiveTabs",
+  "category": "layout",
+  "icon": "cover-image",
+  "keywords": [
+    "ArchiveTabs",
+    "banner",
+    "acf"
+  ],
+  "enqueueStyle": "file:./style.css",
+  "enqueueEditorStyle": "file:./editor.css",
+  "supports": {
+    "align": true,
+    "anchor": true
+  },
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  }
+}

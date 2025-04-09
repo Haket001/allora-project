@@ -1,0 +1,22 @@
+{
+  "name": "acf/buyers-block",
+  "title": "BuyersBlock",
+  "description": "BuyersBlock",
+  "category": "layout",
+  "icon": "cover-image",
+  "keywords": [
+    "BuyersBlock",
+    "banner",
+    "acf"
+  ],
+  "enqueueStyle": "file:./style.css",
+  "enqueueEditorStyle": "file:./editor.css",
+  "supports": {
+    "align": true,
+    "anchor": true
+  },
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  }
+}

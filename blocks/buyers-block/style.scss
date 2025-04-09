@@ -1,0 +1,35 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/mixins' as *;
+
+.buyers-wrap {
+    width: 100%;
+    padding: 44px 0;
+    border-radius: 25px;
+    background: $gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    gap: 30px;
+    p {
+        width: 100%;
+        max-width: 780px;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 44px;
+    }
+    a {
+        border-radius: 25px;
+        background: $light-primary;
+        color: white;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 36px;
+        width: 100%;
+        max-width: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 54px;
+    }
+}

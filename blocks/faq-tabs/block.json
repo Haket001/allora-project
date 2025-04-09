@@ -1,0 +1,23 @@
+{
+  "name": "acf/faq-tabs",
+  "title": "FaqTabs",
+  "description": "FaqTabs",
+  "category": "layout",
+  "icon": "cover-image",
+  "keywords": [
+    "FaqTabs",
+    "banner",
+    "acf"
+  ],
+  "enqueueStyle": "file:./style.css",
+  "enqueueEditorStyle": "file:./editor.css",
+  "enqueueScript": "file:./script.js",
+  "supports": {
+    "align": true,
+    "anchor": true
+  },
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  }
+}

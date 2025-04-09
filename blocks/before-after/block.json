@@ -1,0 +1,28 @@
+{
+  "name": "acf/before-after",
+  "title": "BeforeAfter",
+  "description": "BeforeAfter block with BeerSlider",
+  "category": "layout",
+  "icon": "cover-image",
+  "keywords": [
+    "before",
+    "after",
+    "slider",
+    "comparison"
+  ],
+  "enqueueStyle": [
+    "file:./style.css",
+    "file:./lib/BeerSlider.css",
+    "file:./lib/swiper-bundle.min.css"
+  ],
+  "enqueueScript": [
+    "file:./lib/BeerSlider.js",
+    "file:./script.js",
+    "file:./lib/swiper-bundle.min.js"
+  ],
+  "enqueueEditorStyle": "file:./editor.css",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  }
+}

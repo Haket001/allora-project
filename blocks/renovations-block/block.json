@@ -1,0 +1,22 @@
+{
+  "name": "acf/renovations-block",
+  "title": "RenovationsBlock",
+  "description": "RenovationsBlock",
+  "category": "layout",
+  "icon": "cover-image",
+  "keywords": [
+    "RenovationsBlock",
+    "banner",
+    "acf"
+  ],
+  "enqueueStyle": "file:./style.css",
+  "enqueueEditorStyle": "file:./editor.css",
+  "supports": {
+    "align": true,
+    "anchor": true
+  },
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  }
+}
