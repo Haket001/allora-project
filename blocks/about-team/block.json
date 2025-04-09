@@ -5,6 +5,8 @@
 	"category": "layout",
 	"icon": "cover-image",
 	"keywords": ["AboutTeam", "banner", "acf"],
+	"enqueueStyle": "file:./style.css",
+	"enqueueEditorStyle": "file:./editor.css",
 	"supports": {
 			"align": true,
 			"anchor": true
@@ -12,5 +14,5 @@
 	"acf": {
 		"mode": "edit",
 		"renderCallback": "render_acf_block"
-	}
+	  }
 }

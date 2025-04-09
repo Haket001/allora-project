@@ -1,5 +1,10 @@
 .why-section h4 {
   text-transform: uppercase;
+  text-align: center;
+}
+
+.why-section h5 {
+  color: black;
 }
 
 .why-wrap {

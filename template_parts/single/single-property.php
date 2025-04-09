@@ -36,29 +36,39 @@ $characteristics = array_filter([
     <article>
         <h1><?php the_title(); ?></h1>
         <div class="info-line">
-            <span class="address"><?php echo implode(' ', array_filter([$fields['zip'], $fields['city'], $fields['street']])); ?></span>
-            <span><?php echo esc_html__('Reference number', 'allora') . ': ' . esc_html($fields['reference']) . get_the_ID(); ?></span>
+            <!-- <span class="address"><?php echo implode(' ', array_filter([$fields['zip'], $fields['city'], $fields['street']])); ?></span> -->
+            <span><?php echo esc_html__('Reference number', 'allora') . ': ' . esc_html($fields['reference']); ?></span>
         </div>
 
-        <section class="gallery-wrap">
-            <div class="property-gallery">
-                <?php
-                $featured_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
-                $images = get_field('gallery', get_the_ID()) ?: [];
-                ?>
-                <div class="main-image">
-                    <a href="<?php echo esc_url($featured_image); ?>" data-fancybox="gallery" id="main-image-link">
-                        <img src="<?php echo esc_url($featured_image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" id="main-image">
-                    </a>
+
+        <?php
+        $featured_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
+        $images = get_field('gallery', get_the_ID()) ?: [];
+        ?>
+        <?php if (!empty($featured_image)): ?>
+            <section class="gallery-wrap">
+                <div class="property-gallery">
+                    <div class="main-image">
+                        <a href="<?php echo esc_url($featured_image); ?>" data-fancybox="gallery" id="main-image-link">
+                            <img src="<?php echo esc_url($featured_image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" id="main-image">
+                        </a>
+                    </div>
+                <?php else: ?>
+                    <div style="width: 100%; margin-bottom: 15px;" class="main-image">
+                        <img style="width: 100%;" src="<?= get_stylesheet_directory_uri() ?>/assets/images/no-image.png" alt="">
+                    </div>
+                <?php endif; ?>
+                <?php if (!empty($featured_image)): ?>
+                    <div class="thumbnails">
+                        <?php
+                        echo '<div class="img-wrap"><a href="' . esc_url($featured_image) . '" data-fancybox="gallery"><img src="' . esc_url($featured_image) . '" alt="' . esc_attr(get_the_title()) . '"></a></div>';
+                        echo implode('', array_map(fn($image) => '<div class="img-wrap"><a href="' . esc_url($image) . '" data-fancybox="gallery"><img src="' . esc_url($image) . '" alt="' . esc_attr(get_the_title()) . '"></a></div>', $images));
+                        ?>
+                    </div>
                 </div>
-                <div class="thumbnails">
-                    <?php
-                    echo '<div class="img-wrap"><a href="' . esc_url($featured_image) . '" data-fancybox="gallery"><img src="' . esc_url($featured_image) . '" alt="' . esc_attr(get_the_title()) . '"></a></div>';
-                    echo implode('', array_map(fn($image) => '<div class="img-wrap"><a href="' . esc_url($image) . '" data-fancybox="gallery"><img src="' . esc_url($image) . '" alt="' . esc_attr(get_the_title()) . '"></a></div>', $images));
-                    ?>
-                </div>
-            </div>
-        </section>
+            </section>
+        <?php else: ?>
+        <?php endif; ?>
 
         <div class="article-body__wrap">
             <div class="article__body">
@@ -108,26 +118,26 @@ $characteristics = array_filter([
             </div>
         </div>
         <?php
-		$args = array(
-			'post_type' => 'property',
-			'posts_per_page' => 4,
-			'orderby' => 'date',
-			'order' => 'DESC',
-			'lang' => apply_filters('wpml_current_language', null)
-		);
-		$query = new WP_Query($args);
+        $args = array(
+            'post_type' => 'property',
+            'posts_per_page' => 4,
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'lang' => apply_filters('wpml_current_language', null)
+        );
+        $query = new WP_Query($args);
 
-		if ($query->have_posts()):
-			echo '<div class="grid-container">';
-			while ($query->have_posts()):
-				$query->the_post();
-				get_template_part('template_parts/archive/content', 'property');
-			endwhile;
-			echo '</div>';
-			wp_reset_postdata();
-		else:
-			echo '<p>Not found.</p>';
-		endif;
-		?>
+        if ($query->have_posts()):
+            echo '<div class="grid-container">';
+            while ($query->have_posts()):
+                $query->the_post();
+                get_template_part('template_parts/archive/content', 'property');
+            endwhile;
+            echo '</div>';
+            wp_reset_postdata();
+        else:
+            echo '<p>Not found.</p>';
+        endif;
+        ?>
     </article>
 </div>

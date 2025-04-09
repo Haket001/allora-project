@@ -11,7 +11,15 @@ function theme_enqueue()
         wp_enqueue_style('custom-template-styles', get_stylesheet_directory_uri() . '/assets/styles/home.css');
         wp_enqueue_script('home-scripts', get_template_directory_uri() . '/assets/scripts/home.js', array(), date('Ymd'), true);
     }
-
+    if (is_singular('area')) {
+        wp_enqueue_style('single-style', get_stylesheet_directory_uri() . '/assets/styles/single.css');
+    }
+    if (is_singular('guides')) {
+        wp_enqueue_style('single-guides', get_stylesheet_directory_uri() . '/assets/styles/single-guides.css');
+    }
+    if ( is_post_type_archive( 'guides' ) ) {
+        wp_enqueue_style( 'guides-style', get_stylesheet_directory_uri() . '/assets/styles/guides.css' );
+    }
     if (is_front_page() || is_post_type_archive('property')) {
         wp_enqueue_style('archive', get_stylesheet_directory_uri() . '/assets/styles/archive.css');
         wp_enqueue_style('nouislider', get_template_directory_uri() . '/assets/noUiSlider/nouislider.min.css', array(), '15.5.0');
@@ -34,39 +42,12 @@ function theme_enqueue()
     wp_localize_script('weather-time', 'weatherTimeSettings', array(
         'locale' => get_locale(),
     ));
+    wp_enqueue_script('newsletter-subscribe', get_template_directory_uri() . '/assets/scripts/newsletter-subscribe.js', [], null, true);
+
+    wp_localize_script('newsletter-subscribe', 'SubscribeFormData', [
+        'ajax_url' => admin_url('admin-ajax.php')
+    ]);
 }
 
 
 add_action('wp_enqueue_scripts', 'theme_enqueue');
-
-//Gutenberg
-function enqueue_page_styles_in_gutenberg()
-{
-    if (!is_admin()) {
-        return;
-    }
-
-    global $wp_styles;
-    foreach ($wp_styles->queue as $style) {
-        $src = wp_styles()->registered[$style]->src;
-
-        if ($src && strpos($src, site_url()) === false) {
-            $local_path = get_template_directory() . str_replace(get_template_directory_uri(), '', $src);
-            $local_path = realpath($local_path);
-            
-            if ($local_path && file_exists($local_path)) {
-                wp_enqueue_style(
-                    'gutenberg-' . $style,
-                    $src,
-                    array(),
-                    filemtime($local_path)
-                );
-            } else {
-                wp_enqueue_style('gutenberg-' . $style, $src);
-            }
-        } else {
-            wp_enqueue_style('gutenberg-' . $style, $src);
-        }
-    }
-}
-add_action('enqueue_block_editor_assets', 'enqueue_page_styles_in_gutenberg');

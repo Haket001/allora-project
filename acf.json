@@ -1,91 +1,73 @@
-{
-	"key": "group_hero_section",
-	"title": "Hero Section",
-	"fields": [
+[
+	{
+	  "key": "group_faq_tabs",
+	  "title": "FAQ Tabs",
+	  "fields": [
+		{
+		  "key": "field_faq_slug",
+		  "label": "Slug",
+		  "name": "slug",
+		  "type": "text",
+		  "instructions": "Enter the title for the FAQ section",
+		  "required": 1
+		},
+		{
+		  "key": "field_faq_tabs",
+		  "label": "Tabs",
+		  "name": "tabs",
+		  "type": "repeater",
+		  "instructions": "Add FAQ Tabs",
+		  "required": 1,
+		  "sub_fields": [
 			{
-					"key": "field_video_field",
-					"label": "Video URL",
-					"name": "video_field",
-					"type": "url",
-					"instructions": "Enter the URL of the MP4 video.",
-					"required": 0
+			  "key": "field_tab_slug",
+			  "label": "Tab Slug",
+			  "name": "tab_slug",
+			  "type": "text",
+			  "instructions": "Enter the name of the tab",
+			  "required": 1
 			},
 			{
-					"key": "field_hero_tiitle",
-					"label": "Hero Title",
-					"name": "hero_tiitle",
-					"type": "text",
-					"instructions": "Enter the main title for the hero section.",
-					"required": 1
-			},
-			{
-					"key": "field_hero_tiitle_second",
-					"label": "Hero Subtitle",
-					"name": "hero_tiitle_second",
-					"type": "text",
-					"instructions": "Enter the subtitle for the hero section.",
-					"required": 0
-			},
-			{
-					"key": "field_hero_logo",
-					"label": "Hero Logo (SVG)",
-					"name": "hero_logo",
-					"type": "file",
-					"instructions": "Upload an SVG logo for the hero section.",
-					"required": 0,
-					"return_format": "url",
-					"mime_types": "svg"
-			},
-			{
-					"key": "field_social_links",
-					"label": "Social Links",
-					"name": "social_links",
-					"type": "repeater",
-					"instructions": "Add social media links with icons.",
-					"required": 0,
-					"collapsed": "field_social_url",
-					"min": 0,
-					"max": 5,
-					"layout": "table",
-					"button_label": "Add Social Link",
-					"sub_fields": [
-							{
-									"key": "field_social_url",
-									"label": "Social Media URL",
-									"name": "social_url",
-									"type": "url",
-									"instructions": "Enter the link to the social media profile.",
-									"required": 1
-							},
-							{
-									"key": "field_social_icon",
-									"label": "Social Media Icon (SVG)",
-									"name": "social_icon",
-									"type": "file",
-									"instructions": "Upload an SVG icon for the social media link.",
-									"required": 1,
-									"return_format": "url",
-									"mime_types": "svg"
-							}
-					]
+			  "key": "field_accordion_items",
+			  "label": "Accordion Items",
+			  "name": "accordion_items",
+			  "type": "repeater",
+			  "instructions": "Add accordion questions and answers for this tab",
+			  "required": 1,
+			  "sub_fields": [
+				{
+				  "key": "field_accordion_question",
+				  "label": "Question",
+				  "name": "question",
+				  "type": "text",
+				  "required": 1
+				},
+				{
+				  "key": "field_accordion_answer",
+				  "label": "Answer",
+				  "name": "answer",
+				  "type": "textarea",
+				  "required": 1
+				}
+			  ],
+			  "min": 1,
+			  "layout": "row",
+			  "button_label": "Add Accordion Item"
 			}
-	],
-	"location": [
-			[
-					{
-							"param": "block",
-							"operator": "==",
-							"value": "acf/hero-section"
-					}
-			]
-	],
-	"menu_order": 0,
-	"position": "normal",
-	"style": "default",
-	"label_placement": "top",
-	"instruction_placement": "label",
-	"hide_on_screen": "",
-	"active": 1,
-	"description": "Custom ACF fields for the Hero Section block.",
-	"show_in_rest": 1
-}
+		  ],
+		  "min": 1,
+		  "layout": "row",
+		  "button_label": "Add Tab"
+		}
+	  ],
+	  "location": [
+		[
+		  {
+			"param": "block",
+			"operator": "==",
+			"value": "acf/faq-tabs"
+		  }
+		]
+	  ]
+	}
+  ]

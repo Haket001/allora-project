@@ -6,6 +6,7 @@
 function theme_setup() {
     add_theme_support('title-tag');
     add_theme_support('custom-logo');
+    add_theme_support('post-thumbnails');
 }
 add_action('after_setup_theme', 'theme_setup');
 
@@ -45,3 +46,51 @@ add_action('wp_enqueue_scripts', function() {
         wp_dequeue_script('jquery-migrate');
     }
 }, 100);
+
+add_action('wp_ajax_nopriv_save_subscription_email', 'save_subscription_email_ajax');
+add_action('wp_ajax_save_subscription_email', 'save_subscription_email_ajax');
+
+function save_subscription_email_ajax() {
+    if (empty($_POST['subscriber_email']) || !is_email($_POST['subscriber_email'])) {
+        wp_send_json_error('Invalid email address.');
+    }
+
+    $email = sanitize_email($_POST['subscriber_email']);
+
+    $emails = get_option('subscription_emails', []);
+    if (!is_array($emails)) {
+        $emails = [];
+    }
+
+    if (!in_array($email, $emails)) {
+        $emails[] = $email;
+        update_option('subscription_emails', $emails);
+    } else {
+        wp_send_json_error('You are already subscribed.');
+    }
+
+    wp_send_json_success('Thank you for subscribing.');
+}
+
+add_action('admin_menu', function() {
+    add_menu_page(
+        'Subscriptions',
+        'Subscriptions',
+        'manage_options',
+        'subscriptions',
+        'render_subscription_emails_page'
+    );
+});
+
+function render_subscription_emails_page() {
+    $emails = get_option('subscription_emails', []);
+    if (empty($emails)) {
+        echo '<p>No subscriptions yet.</p>';
+        return;
+    }
+    echo '<h2>Subscription Emails</h2><ul>';
+    foreach ($emails as $email) {
+        echo '<li>' . esc_html($email) . '</li>';
+    }
+    echo '</ul>';
+}

@@ -74,7 +74,19 @@ function get_breadcrumbs_html()
         $post_type = get_post_type();
         if ($post_type && $post_type !== 'post') {
             $post_type_obj = get_post_type_object($post_type);
-            if ($post_type_obj && !empty($post_type_obj->has_archive)) {
+            
+            $archive_page_id = get_custom_archive_page_id_for_cpt($post_type);
+        
+            if ($archive_page_id) {
+                $translated_id = function_exists('icl_object_id') 
+                    ? apply_filters('wpml_object_id', $archive_page_id, 'page', true) 
+                    : $archive_page_id;
+        
+                $archive_link = get_permalink($translated_id);
+                $archive_title = get_the_title($translated_id);
+        
+                $html .= ' / <a href="' . esc_url($archive_link) . '">' . esc_html($archive_title) . '</a>';
+            } elseif ($post_type_obj && !empty($post_type_obj->has_archive)) {
                 $archive_link = get_post_type_archive_link($post_type);
                 $archive_link = function_exists('icl_object_id') ? apply_filters('wpml_permalink', $archive_link) : $archive_link;
                 $html .= ' / <a href="' . esc_url($archive_link) . '">' . esc_html($post_type_obj->labels->name) . '</a>';
@@ -130,6 +142,14 @@ function get_breadcrumbs_html()
 function the_breadcrumbs()
 {
     echo get_breadcrumbs_html();
+}
+
+function get_custom_archive_page_id_for_cpt($post_type) {
+    $mapping = [
+        'area' => 897,
+    ];
+
+    return $mapping[$post_type] ?? null;
 }
 
 function enqueue_breadcrumbs_style()

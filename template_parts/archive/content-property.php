@@ -13,7 +13,7 @@ $street= get_field("street", get_the_ID());
                 if ($cost) {
                     $number = (float) $cost;
                     $formatted_cost = number_format($number, 0, ',', ' ');
-                    echo $formatted_cost . ' €';
+                    echo '€ ' . $formatted_cost;
                 } else {
                     echo esc_html__('Price on request', 'allora');
                 }
@@ -40,7 +40,7 @@ $street= get_field("street", get_the_ID());
             <a href="<?php the_permalink(); ?>">
                 <h6 class="list-title"><?php the_title(); ?></h6>
             </a>
-            <span class="address"><?php echo $zip . ' ' . $city . ' ' . $street; ?></span>
+            <!-- <span class="address"><?php echo $zip . ' ' . $city . ' ' . $street; ?></span> -->
         </div>
     </div>
 </article>

@@ -1,21 +1,23 @@
 <footer>
     <div class="container">
-        <div class="contact-wrap">
+        <section class="contact-wrap" aria-labelledby="footer-contact">
             <div class="info-block">
-                <div class='info-pic'>
+                <div class="info-pic" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" width="36" height="37" viewBox="0 0 36 37" fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M18 1.13477C10.7513 1.13477 4.875 7.01103 4.875 14.2598C4.875 15.8384 5.44319 17.6717 6.24825 19.5105C7.0641 21.3741 8.17359 23.3541 9.36171 25.2585C11.7388 29.0687 14.4865 32.6643 15.9903 34.5626C17.0219 35.8644 18.9781 35.8644 20.0097 34.5626C21.5136 32.6643 24.2612 29.0687 26.6383 25.2585C27.8263 23.3541 28.9359 21.3741 29.7517 19.5105C30.5568 17.6717 31.125 15.8384 31.125 14.2598C31.125 7.01103 25.2488 1.13477 18 1.13477ZM18 7.13477C14.4792 7.13477 11.625 9.98895 11.625 13.5098C11.625 17.0306 14.4792 19.8848 18 19.8848C21.5208 19.8848 24.375 17.0306 24.375 13.5098C24.375 9.98895 21.5208 7.13477 18 7.13477Z"
                             fill="white" />
                     </svg>
                 </div>
-                <div class="contact-text-wrap">
-                    <a href='<?php the_field('address_link', 'option') ?>'
-                        target='_blank'><?php the_field('address', 'option') ?></a>
-                </div>
+                <address class="contact-text-wrap">
+                    <a href="<?php the_field('address_link', 'option') ?>" target="_blank" rel="noopener">
+                        <?php the_field('address', 'option') ?>
+                    </a>
+                </address>
             </div>
+
             <div class="info-block">
-                <div class='info-pic'>
+                <div class="info-pic" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" width="36" height="37" viewBox="0 0 36 37" fill="none">
                         <g clip-path="url(#clip0_534_2782)">
                             <path
@@ -29,41 +31,50 @@
                         </defs>
                     </svg>
                 </div>
-
                 <div class="contact-text-wrap">
-                    <a href="tel:<?php the_field('phone', 'option') ?>"><?php the_field('phone', 'option') ?></a>
-                    <a
-                        href="tel:<?php the_field('second_phone', 'option') ?>"><?php the_field('second_phone', 'option') ?></a>
+                    <a href="tel:<?php the_field('phone', 'option') ?>">
+                        <?php the_field('phone', 'option') ?>
+                    </a>
+                    <a href="tel:<?php the_field('second_phone', 'option') ?>">
+                        <?php the_field('second_phone', 'option') ?>
+                    </a>
                 </div>
             </div>
-            <div class="info-block">
-                <div class='info-pic'>
 
+            <div class="info-block">
+                <div class="info-pic" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" width="36" height="37" viewBox="0 0 36 37" fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M2.8913 6.42955L13.7106 17.2535C16.0703 19.6087 19.9276 19.6108 22.2893 17.2535L33.1086 6.42955C33.2176 6.32059 33.2017 6.14116 33.0753 6.053C31.9718 5.2834 30.6291 4.82715 29.1829 4.82715H6.81713C5.37078 4.82715 4.02814 5.28348 2.92462 6.053C2.79822 6.14116 2.78234 6.32059 2.8913 6.42955ZM0 11.6442C0 10.5069 0.281981 9.43231 0.778674 8.48782C0.856346 8.34006 1.05322 8.31018 1.17126 8.42821L11.8536 19.1106C15.2364 22.4982 20.7616 22.5002 24.1464 19.1106L34.8287 8.42821C34.9468 8.31018 35.1437 8.34006 35.2213 8.48782C35.7179 9.43231 36 10.507 36 11.6442V25.8752C36 29.637 32.94 32.6923 29.1829 32.6923H6.81713C3.0601 32.6923 0 29.637 0 25.8752V11.6442Z"
                             fill="white" />
                     </svg>
                 </div>
-
                 <div class="contact-text-wrap">
-                    <a href="mailto:<?php the_field('email', 'option') ?>"><?php the_field('email', 'option') ?></a>
-                    <a href="https://<?php the_field('email', 'option') ?>"><?php the_field('website', 'option') ?></a>
+                    <a href="mailto:<?php the_field('email', 'option') ?>">
+                        <?php the_field('email', 'option') ?>
+                    </a>
+                    <a href="https://<?php the_field('website', 'option') ?>" rel="noopener">
+                        <?php the_field('website', 'option') ?>
+                    </a>
                 </div>
             </div>
+
             <div class="subscribe-field">
                 <p><?php the_field('subscription_title', 'option') ?></p>
-                <form class="subscribe-form">
-                    <input type="email" placeholder="Email">
-                    <button class='subscribe-button gradient-button' type="submit">Subscribe</button>
+                <form id="subscribe-form" class="subscribe-form" method="post">
+                    <input type="email" id="subscriber_email" name="subscriber_email" placeholder="Email" required>
+                    <button class="subscribe-button gradient-button" type="submit">Subscribe</button>
                 </form>
+                <div id="subscribe-message" aria-live="polite"></div>
             </div>
-        </div>
+        </section>
+
         <hr class="line footer">
-        <div class="footer-info">
-            <div class="social-wrap">
-                <a href="<?php the_field('social_link', 'option') ?>">
-                    <svg width="36" height="37" viewBox="0 0 36 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+        <section class="footer-info" aria-labelledby="footer-info-heading">
+            <nav class="social-wrap" aria-label="Социальные сети">
+                <a href="<?php the_field('social_link', 'option') ?>" rel="noopener">
+                    <svg width="36" height="37" viewBox="0 0 36 37" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <circle cx="18" cy="18.7598" r="17.5" stroke="white" />
                         <g clip-path="url(#clip0_499_2770)">
                             <path
@@ -80,8 +91,8 @@
                         </defs>
                     </svg>
                 </a>
-                <a href="<?php the_field('social_link_second', 'option') ?>">
-                    <svg width="36" height="37" viewBox="0 0 36 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <a href="<?php the_field('social_link_second', 'option') ?>" rel="noopener">
+                    <svg width="36" height="37" viewBox="0 0 36 37" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <circle cx="18" cy="18.7598" r="17.5" stroke="white" />
                         <g clip-path="url(#clip0_499_2776)">
                             <path
@@ -95,9 +106,11 @@
                         </defs>
                     </svg>
                 </a>
-            </div>
+            </nav>
             <p>© <?php echo date('Y'); ?>. All rights reserved.</p>
-            <a href="https://ut.in.ua" target='_blank'>Developed by UT</a>
-        </div>
+            <p>
+                <a href="https://ut.in.ua" target="_blank" rel="noopener">Developed by UT</a>
+            </p>
+        </section>
     </div>
 </footer>

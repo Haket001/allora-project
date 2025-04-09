@@ -14,9 +14,9 @@ $counter = 1;
 							<strong><?php echo $counter; ?></strong>
 							<span>
 								<p><?php echo esc_html($why_element['why_subslug']); ?></p>
-								<h4>
+								<h5>
 									<?php echo esc_html($why_element['why_slug']); ?>
-								</h4>
+								</h5>
 							</span>
 						</span>
 						<p><?php echo wp_kses_post($why_element['why_text']); ?></p>
